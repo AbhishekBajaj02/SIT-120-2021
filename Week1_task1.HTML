@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first Webpage</title>
+    <link rel="stylesheet" type="text/css" href="Week1_task2.CSS" />
+    <script src="Week1_task3.JS"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* Style the header */
+        
+        .header {
+            background-color: lightseagreen;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Create three equal columns that floats next to each other */
+        
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* border: 1px solid black; */
+        }
+        
+        .column {
+            /* border: 1px solid black; */
+            width: 33.3%;
+            border-right: dashed;
+            border-bottom: dashed;
+            padding: 50px;
+        }
+        
+        @media screen and (max-width:600px) {
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1 style="color:red" ;>WEEK 1 TASKS</h1>
+        <h4>Welcome to my first webpage.</h4>
+        <p>Here, I have done task 1, 2 and 3 by making a<b> Responsive wepage </b>which calculates the average marks of a student and also tells the current time.</p>
+    </div>
+
+    <div class="row">
+
+        <div class="column">
+            <h2>About Me</h2>
+            <p>Greetings everyone, my name is <b>Abhishek Bajaj</b>. I am studying <b>Bachelor of Information Technology at Deakin University</b>. This is my first web page and I really enjoyed it alot. Hope I will be able to develop more advanced skills
+                to improve myself and can make a cool, unique and useful Responsive web app. </p>
+        </div>
+
+        <div class="column" ;>
+            <h2>Average Calculator</h2>
+            <h4>Please Enter your grade for each subject-:</h4>
+            <TABLE BORDER=2 CELLSPACING=2 CELLPADDING=2>
+
+                <tr>
+                    <td>Subject</td>
+                    <td>Grade</td>
+                </tr>
+
+                <tr>
+                    <td>Mathematics</td>
+                    <td><input type="text" id="Mathematics" size=2 value=""></td>
+                </tr>
+
+                <tr>
+                    <td>Physics</td>
+                    <td><input type="text" id="Physics" size=2 value=""></td>
+                </tr>
+
+                <tr>
+                    <td>Chemistry</td>
+                    <td><input type="text" id="Chemistry" size=2 value=""></td>
+                </tr>
+
+                <tr>
+                    <td>English</td>
+                    <td><input type="text" id="English" size=2 value=""></td>
+                </tr>
+
+                <br><br>
+                </p>
+            </TABLE>
+            <br>
+            <input type="button" value="Average Grade" onclick="calculator()">
+            <hr>
+            <div id="outputDiv" style="height: 50px; width: 100%;"></div>
+
+
+        </div>
+
+        <div class="column">
+            <h2>Current Time</h2>
+            <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click me to display Date and Time.</button>
+
+            <p id="demo"></p>
+        </div>
+    </div>
+</body>
+
+</html>
