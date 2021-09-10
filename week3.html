@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body style="background-color: red;">
+
+    <p id="a"></p>
+    <p id="b"></p>
+    <p id="c"></p>
+    <p id="d"></p>
+    <p>This month is:</p>
+    <p id="month"></p>
+    <button type="button" onclick="document.getElementById('b').innerHTML = Date()">Button for Date and Time</button><br>
+    <article>
+        Enter the first digit : <input id="dig1"><br>
+        Enter the second digit: <input id="dig2">
+        <button onclick="addnums()">Add</button>
+    </article>
+
+    <input id="sum">
+    <p>Colours used:</p>
+    <ul id="e">
+        <li v-for="item in items" :key="item.message">
+            {{ item.message }}
+        </li>
+    </ul>
+    <script>
+        var x = "\"Date and Time\" is";
+        document.getElementById("a").innerHTML = x;
+        var countries = ["India", "Australia", "England"];
+        var y = "Countries with same time zone";
+        document.getElementById("c").innerHTML = y;
+        document.getElementById("d").innerHTML = countries.join(", ");
+        var d = new Date();
+        var n = d.getMonth();
+        document.getElementById("month").innerHTML = n;
+        function addnums() {
+            var a, b, c;
+            a = Number(document.getElementById("dig1").value);
+            b = Number(document.getElementById("dig2").value);
+            c = a + b;
+            document.getElementById("sum").value = c;
+        }
+        var e = new Vue({
+            el: '#e',
+            data: {
+                items: [
+                    { message: 'red' },
+                    { message: 'White' }
+                ]
+            }
+        })
+    </script>
+    <style>
+        p {
+            color: white;
+            font-family: fantasy;
+        }
+
+        article {
+            color: white;
+            font-family: fantasy;
+        }
+
+        ul {
+            color: white;
+            font-family: fantasy;
+        }
+    </style>
+
+
+</body>
+
+</html>
